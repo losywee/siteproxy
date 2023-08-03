@@ -255,6 +255,11 @@ const siteSpecificReplace = {
     'phncdn.com': {
         // '("[:]?//)': `$1${serverName}:${port}/https/`, // default to https
     }
+    'amazon.com': {
+       ' href="(\/[^"\/]*\/dp\/[^"]*")': ` href=/https/www.amazon.com/$1`,
+       ' data-url="(\/s\?k=[^"]*")': ` data-url=/https/www.amazon.com/$1`,
+        
+    }
 }
 
 module.exports = { blockedSites, urlModify, httpprefix, serverName, port, locationReplaceMap302, regReplaceMap, siteSpecificReplace, pathReplace }
